@@ -73,8 +73,14 @@ const Player = () => {
 
   return (
     <div className="player-panel glass-panel">
+      {/* Mobile Top Thin Progress Bar */}
+      <div 
+        className="mobile-progress-bar" 
+        style={{ width: `${duration > 0 ? (currentTime / duration) * 100 : 0}%` }}
+      ></div>
+
       {/* Track Info (Left) */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '14px', width: '300px' }}>
+      <div className="player-track-info">
         <div 
           onClick={() => setIsVisualizerOpen(!isVisualizerOpen)}
           style={{ 
@@ -142,7 +148,7 @@ const Player = () => {
       </div>
 
       {/* Playback Controls (Middle) */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', width: '100%' }}>
+      <div className="player-controls desktop-only">
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           {/* Shuffle */}
           <button
@@ -204,7 +210,7 @@ const Player = () => {
               boxShadow: '0 4px 10px rgba(255, 255, 255, 0.2)',
               transition: 'all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1)'
             }}
-            className="pulse-glow"
+            className="pulse-glow btn-play-pause"
             title={isPlaying ? 'Pause' : 'Play'}
           >
             {isPlaying ? (
@@ -280,7 +286,7 @@ const Player = () => {
       </div>
 
       {/* Utilities Section (Right) */}
-      <div className="player-volume-section" style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '14px', width: '300px' }}>
+      <div className="player-volume-section desktop-only">
         {/* Toggle Visualizer */}
         <button
           onClick={() => setIsVisualizerOpen(!isVisualizerOpen)}
@@ -346,6 +352,49 @@ const Player = () => {
             style={{ height: '3px' }}
           />
         </div>
+      </div>
+
+      {/* Mobile-only Controls (Right side on mobile) */}
+      <div className="player-controls-mobile mobile-only">
+        <button
+          onClick={togglePlay}
+          style={{
+            background: '#ffffff',
+            color: '#000000',
+            border: 'none',
+            width: '36px',
+            height: '36px',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            boxShadow: '0 2px 8px rgba(255, 255, 255, 0.2)'
+          }}
+          className="pulse-glow"
+          title={isPlaying ? 'Pause' : 'Play'}
+        >
+          {isPlaying ? (
+            <Pause size={16} fill="currentColor" />
+          ) : (
+            <Play size={16} fill="currentColor" style={{ marginLeft: '1.5px' }} />
+          )}
+        </button>
+        <button
+          onClick={nextTrack}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: 'var(--text-primary)',
+            cursor: 'pointer',
+            padding: '4px',
+            display: 'flex',
+            alignItems: 'center'
+          }}
+          title="Next"
+        >
+          <SkipForward size={20} fill="currentColor" />
+        </button>
       </div>
     </div>
   );

@@ -218,22 +218,11 @@ const Visualizer = () => {
       </div>
 
       {/* Grid Content split */}
-      <div 
-        style={{ 
-          display: 'grid', 
-          gridTemplateColumns: '1fr 1fr', 
-          alignItems: 'center', 
-          padding: '40px',
-          gap: '40px',
-          overflowY: 'auto'
-        }}
-      >
+      <div className="visualizer-content">
         {/* Left Side: Dynamic spinning Vinyl artwork */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
           <div 
             style={{ 
-              width: '280px', 
-              height: '280px', 
               borderRadius: '50%', 
               background: 'rgba(255,255,255,0.02)',
               border: '10px solid #1a1a1a',
@@ -242,7 +231,7 @@ const Visualizer = () => {
               overflow: 'hidden',
               marginBottom: '28px'
             }}
-            className={`vinyl-record ${!isPlaying ? 'vinyl-record-paused' : ''} pulse-glow`}
+            className={`vinyl-record ${!isPlaying ? 'vinyl-record-paused' : ''} pulse-glow visualizer-vinyl`}
           >
             {/* Center vinyl tracks */}
             <div style={{

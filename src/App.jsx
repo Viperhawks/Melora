@@ -4,6 +4,7 @@ import { LibraryProvider } from './context/LibraryContext';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 import Player from './components/Player';
+import MobileNav from './components/MobileNav';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Sidebar />
           <MainContent />
           <Player />
+          <MobileNav />
           
         </div>
       </LibraryProvider>
