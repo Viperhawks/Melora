@@ -134,7 +134,7 @@ const HomeView = () => {
                 {mix.title}
               </h4>
               <p style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '4px', textTransform: 'uppercase', fontWeight: 'bold' }}>
-                {mix.tracks.length > 0 ? `${mix.tracks.length} tracks` : 'Loading...'}
+                {isLoading ? 'Loading...' : `${mix.tracks.length} tracks`}
               </p>
             </div>
             
