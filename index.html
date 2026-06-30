@@ -21,6 +21,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://melora.vercel.app/" />
+    <meta property="og:site_name" content="Melora" />
     <meta property="og:title" content="Melora - Premium Open-Source Music Player" />
     <meta property="og:description" content="Stream Malayalam, English, and Hindi songs on a stunning black-and-white glassmorphic music player for free." />
     <meta property="og:image" content="https://melora.vercel.app/pwa-512x512.png" />
@@ -34,22 +35,30 @@
 
     <!-- Structured JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Melora",
-      "url": "https://melora.vercel.app/",
-      "image": "https://melora.vercel.app/pwa-512x512.png",
-      "description": "Melora is a premium, open-source music streaming application with a sleek black-and-white glassmorphic interface. Stream Malayalam, English, Hindi, and Tamil music for free.",
-      "applicationCategory": "MusicApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires HTML5 Audio support",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Melora",
+        "url": "https://melora.vercel.app/"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Melora",
+        "url": "https://melora.vercel.app/",
+        "image": "https://melora.vercel.app/pwa-512x512.png",
+        "description": "Melora is a premium, open-source music streaming application with a sleek black-and-white glassmorphic interface. Stream Malayalam, English, Hindi, and Tamil music for free.",
+        "applicationCategory": "MusicApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires HTML5 Audio support",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
       }
-    }
+    ]
     </script>
     
     <title>Melora - Premium Open-Source Music Player</title>
